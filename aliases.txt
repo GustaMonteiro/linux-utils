@@ -24,3 +24,10 @@ alias rrcmkb='cmake .. && cmake --build .'
 alias cmkb='rm -rf build && mkdir build && cd build && cmake .. && cmake --build .'
 alias cmkc='cd .. && rm -rf build'
 
+## SSH
+
+sssh() {
+  eval $(ssh-agent -s)
+  ssh-add ~/.ssh/mysshkey
+}
+
