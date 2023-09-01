@@ -1,3 +1,22 @@
+## COMMANDS
+
+alias ls='exa --icons'
+
+alias open='xdg-open'
+set-open-default() {
+  xdg-mime default $1.desktop $(xdg-mime query filetype $2)
+}
+
+## COPY AND PASTE
+
+alias c='xclip && xclip -o | xclip -selection clipboard'
+alias v='xclip -o'
+
+## ZSHRC
+
+alias ezshrc='lvim ~/.zshrc'
+alias szshrc='source ~/.zshrc'
+
 ## CMAKE
 
 alias rcmkb='cmake --build .'
@@ -5,13 +24,3 @@ alias rrcmkb='cmake .. && cmake --build .'
 alias cmkb='rm -rf build && mkdir build && cd build && cmake .. && cmake --build .'
 alias cmkc='cd .. && rm -rf build'
 
-## COMMANDS
-
-alias ls='exa --icons'
-alias ezshrc='lvim ~/.zshrc'
-alias szshrc='source ~/.zshrc'
-
-## COPY AND PASTE
-
-alias c='xclip && xclip -o | xclip -selection clipboard'
-alias v='xclip -o'
