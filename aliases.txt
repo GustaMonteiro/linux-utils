@@ -7,6 +7,8 @@ set-open-default() {
   xdg-mime default $1.desktop $(xdg-mime query filetype $2)
 }
 
+alias tempdir='mkdir -p /tmp/__tempdir && cd /tmp/__tempdir'
+
 ## COPY AND PASTE
 
 alias c='xclip && xclip -o | xclip -selection clipboard'
