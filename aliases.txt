@@ -1,5 +1,7 @@
 ## COMMANDS
 
+alias update="sudo apt update && sudo apt upgrade -y"
+
 alias ls='exa --icons'
 
 alias open='xdg-open'
@@ -8,6 +10,8 @@ set-open-default() {
 }
 
 alias tempdir='mkdir -p /tmp/__tempdir && cd /tmp/__tempdir'
+
+alias gemp="touch main.cpp input output"
 
 ## COPY AND PASTE
 
@@ -25,6 +29,12 @@ alias rcmkb='cmake --build .'
 alias rrcmkb='cmake .. && cmake --build .'
 alias cmkb='rm -rf build && mkdir build && cd build && cmake .. && cmake --build .'
 alias cmkc='cd .. && rm -rf build'
+
+## MAKE
+
+alias mm="make main && ./main"
+alias mmi="make main && ./main < input"
+alias mmid="make main && ./main < input | diff -c - output"
 
 ## SSH
 
