@@ -1,6 +1,6 @@
 ## COMMANDS
 
-alias update="sudo apt update && sudo apt upgrade -y"
+alias update="sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && flatpak update -y"
 
 alias ls='exa --icons'
 
