@@ -10,6 +10,10 @@ set-open-default() {
 }
 
 alias tempdir='mkdir -p /tmp/__tempdir && cd /tmp/__tempdir'
+alias tempcode='mkdir -p /tmp/__code && cd /tmp/__code'
+alias tempdownloads='mkdir -p /tmp/__downloads && cd /tmp/__downloads'
+alias tempdocuments='mkdir -p /tmp/__documents && cd /tmp/__documents'
+alias temppictures='mkdir -p /tmp/__pictures && cd /tmp/__pictures'
 
 alias gemp="touch main.cpp input output"
 

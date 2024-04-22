@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+
+import requests
+import json
+
+def get_ip_assignment(url, bearer_token):
+    headers = {
+        'Authorization': f'token {bearer_token}'
+    }
+
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()  # Raise an exception for HTTP errors (4xx and 5xx)
+        
+        # Assuming the response is in JSON format
+        data = response.json()
+
+        # Extracting the desired information
+        ip_assignment = data.get('config', {}).get('ipAssignments', [])[0]
+
+        return ip_assignment
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error making the request: {e}")
+        return None
+
+# Replace 'YOUR_URL' and 'YOUR_BEARER_TOKEN' with the actual URL and Bearer token
+url = 'https://api.zerotier.com/api/v1/network/363c67c55a9d5ad9/member/ce6a3da0ff'
+bearer_token = '4IrBIcCbE2PDwhAd2n7yyEsWMEiDThph'
+
+result = get_ip_assignment(url, bearer_token)
+
+if result:
+    print(f"IP Assignment at index 0: {result}")
+else:
+    print("Failed to retrieve IP assignment.")
+

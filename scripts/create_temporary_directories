@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+temporary_directories=(
+  __code
+  __downloads
+  __pictures
+  __documents
+  __tempdir
+)
+
+for directory in ${temporary_directories[@]}; do
+  mkdir /tmp/${directory}
+  chown gusta /tmp/${directory}
+done

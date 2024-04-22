@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# chat
+/opt/google/chrome/google-chrome --profile-directory=Default --app-id=mdpkiolbdkhdjpekfbkbmhigcaggjagi
+#
+# teams
+/opt/google/chrome/google-chrome --profile-directory=Default --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo
+
+# Thunderbird
+flatpak run org.mozilla.Thunderbird
