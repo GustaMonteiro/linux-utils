@@ -1,8 +1,27 @@
+## SETTINGS
+
+if command -v lvim &> /dev/null
+then
+  export EDITOR=lvim
+  export VISUAL=lvim
+elif command -v nvim &> /dev/null
+then
+  export EDITOR=nvim
+  export VISUAL=nvim
+elif command -v vim &> /dev/null
+then
+  export EDITOR=vim
+  export VISUAL=vim
+fi
+
 ## COMMANDS
 
 alias update="sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && flatpak update -y"
 
-alias ls='exa --icons'
+if command -v exa &> /dev/null
+then
+  alias ls='exa --icons'
+fi
 
 alias open='xdg-open'
 set-open-default() {
@@ -24,8 +43,8 @@ alias v='xclip -o'
 
 ## ZSHRC
 
-alias ezshrc='lvim ~/.zshrc'
-alias szshrc='source ~/.zshrc'
+alias ezshrc="$EDITOR ~/.zshrc"
+alias szshrc="source ~/.zshrc"
 
 ## CMAKE
 
