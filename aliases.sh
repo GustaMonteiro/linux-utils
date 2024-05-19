@@ -97,3 +97,6 @@ activate_venv() {
   source $env_name/bin/activate
 }
 
+## UTILITY
+
+alias tb='nc termbin.com 9999'
