@@ -48,13 +48,16 @@ alias szshrc="source ~/.zshrc"
 
 ## CMAKE
 
+# cmake build
 alias rcmkb='cmake --build build/'
 
+# cmake reconfigure and build
 rrcmkb() {
   cmake -S ./ -B build/ ${@}
   cmake --build build/
 }
 
+# cmake full build
 cmkb() {
   rm -rf build/
   mkdir build/
@@ -62,14 +65,24 @@ cmkb() {
   cmake --build build/
 }
 
+# cmake clear
 alias cmkc='rm -rf build/'
 
+# cmake test
 cmkt() {
   ctest --test-dir build/${@}
 }
 
+# cmake run
 cmkr() {
   (cd build; ./${@})
+}
+
+# cmake run with cd
+cmkcdr() {
+  echo ${1}
+  echo ${@:2}
+  (cd build/${1}; ./${@:2})
 }
 
 ## MAKE
